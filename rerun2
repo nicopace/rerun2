@@ -65,7 +65,7 @@ ignore_until=$(date +%s.%N)
 
 inotifywait --quiet --recursive --monitor --format "%e %w%f" \
     --event modify --event move --event create --event delete \
---exclude '__pycache__' --exclude '.cache' --exclude '.swp' --exclude 'luacov.stats.out' \
+--exclude '__pycache__' --exclude '.cache' --exclude '*.swp' --exclude 'luacov.stats.out' \
     . | while read changed
 do
 
